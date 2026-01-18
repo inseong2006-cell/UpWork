@@ -325,7 +325,7 @@ header {
     }
 
         .your-info textarea {
-        height: 190px;
+        height: 150px;
         resize: none;
         margin-bottom: 16px;
     }
@@ -468,13 +468,14 @@ footer {
 .js .reveal {
   opacity: 0;
   transform: translateY(48px);
-  transition: opacity 700ms ease, transform 700ms ease;
+  transition: opacity 1200ms ease, transform 1200ms ease;
   will-change: opacity, transform;
 }
 
 .js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+  transition-delay: 80ms;
 }
 
 .js .reveal.is-exiting {
@@ -485,17 +486,5 @@ footer {
 
 .js .service-card.reveal:hover {
   transform: translateY(0) scale(1.03);
-}
-
-
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal.is-visible,
-  .reveal.is-exiting {
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
 }
 
