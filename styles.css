@@ -488,3 +488,143 @@ footer {
   transform: translateY(0) scale(1.03);
 }
 
+
+/* ---------- Tablets and down ---------- */
+@media (max-width: 900px) {
+  :root { --header-h: 72px; }
+
+  /* Header: stack + wrap */
+  header {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 0 14px 0;
+  }
+
+  .logo {
+    width: auto;
+    margin-left: 5vw;
+  }
+
+  .navigation {
+    width: 100%;
+    margin: 0 5vw;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* Hero */
+  .title {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .title p {
+    font-size: 40px;
+    line-height: 1.12;
+  }
+
+  .carpentry {
+    font-size: inherit;
+  }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .text {
+    min-width: 0;          
+    width: 100%;
+  }
+
+  .profile {
+    width: 100% !important;
+    height: auto !important;
+    margin: 24px 0 0 0 !important;
+  }
+
+  #about .profile img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .contact-info {
+    height: auto;
+  }
+
+  .contact-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 560px) {
+  section {
+    padding: 0 5vw 18px;
+  }
+
+  .title p {
+    font-size: 30px;
+  }
+
+  #home img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 22px auto !important;
+    object-fit: cover;
+  }
+
+  /* Gallery */
+  .gallery-wrap {
+    width: 100%;
+    margin: 0;
+    grid-template-columns: 1fr;   
+    gap: 16px;
+  }
+
+  .gallery-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .image-placeholder,
+  .gallery-images img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .image-placeholder img {
+    aspect-ratio: 5 / 3;           
+    object-fit: cover !important;
+  }
+
+  /* Footer */
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-left {
+    margin-left: 5vw;
+  }
+
+  .footer-right {
+    margin-right: 0;
+    margin-left: 5vw;
+    flex-wrap: wrap;
+  }
+}
+/* END OF STYLES */
+
