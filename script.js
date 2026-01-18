@@ -127,6 +127,17 @@ document.querySelectorAll(
   );
 
   targets.forEach((el) => io.observe(el));
+
+  requestAnimationFrame(() => {
+  targets.forEach((el) => {
+    const r = el.getBoundingClientRect();
+    const inView = r.top < window.innerHeight * 0.9 && r.bottom > 0;
+    if (inView) {
+      el.classList.add("is-visible");
+      el.classList.remove("is-exiting");
+    }
+  });
+});
 });
 
 document.addEventListener("DOMContentLoaded", () => {
