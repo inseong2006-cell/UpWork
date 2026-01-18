@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document metadata + external resources (CSS + Fonts) -->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vhomes Texas</title>
+
+    <script>document.documentElement.classList.add('js');</script>
+
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    />
+</head>
+
+<body>
+    <!-- Sticky Header: Logo + Navigation -->
+    <header>
+        <div class="logo">
+            <h1>VHOMES</h1>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="navigation">
+            <div class="navigation-link"><a href="#home">HOME</a></div>
+            <div class="navigation-link"><a href="#about">ABOUT</a></div>
+            <div class="navigation-link"><a href="#services">SERVICES</a></div>
+            <div class="navigation-link"><a href="#gallery">GALLERY</a></div>
+            <div class="navigation-link"><a href="#contact">CONTACT</a></div>
+        </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <main class="container">
+
+        <!-- HERO / HOME SECTION (headline + CTA + hero image) -->
+        <section id="home">
+            <div class="title">
+                <p>Quality <span class="carpentry">Carpentry</span> & Exterior Renovation You Can Trust.</p>
+            </div>
+
+            <a href="#contact" class="button">REQUEST A FREE ESTIMATE</a>
+
+            <img src="images/Deck.png" alt="Expertly constructed wooden deck with precision cuts areound mature trees, attached to a home" style="width: 90vw; height: auto; margin: 40px auto 40px auto; object-fit: cover;">
+        </section>
+
+        <!-- ABOUT SECTION (company intro + owner image) -->
+        <section id="about">
+            <div class="about-grid">
+                <div class="text">
+                    <h2>About Us</h2>
+                    <h3>Hello, my name is Victor, and I am the owner of VHOMES</h3>
+                    <p>I would like to introduce you to my company. At VHOMES, we specialize in quality construction, expert carpentry, and exterior renovation that transforms homes from the outside in. From deck and porch renovations to full patio upgrades, we deliver craftsmanship, durability, and style in every project. Whether you're building something new or updating an existing structure, we are committed to providing exceptional service and results that last.</p>
+                </div>
+
+                <div class="profile" style="width: 450px; height: 300px; background-color: black; margin: 40px auto 0px auto;" >
+                    <img src="images/profile.png" alt="Victor, the owner of Vhomes Texas, standing in front of a house he renovated" style="width: 450px; height: 300px; object-fit: cover;">
+                </div>
+            </div>
+        </section>  
+
+        <!-- SERVICES SECTION  -->
+        <section class="services" id="services">
+            <div class="container reveal">
+                <h2>Services</h2>
+
+                <div class="services-grid">
+
+                    <!-- Service Card 1: Carpentry & Framing -->
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-icon">
+                                <img src="images/Carpentry-icon.png" alt="Carpentry and Framing icons">
+                            </div>
+
+                            <!-- "Open" button (data-* used by JS for popup/modal) -->
+                            <button class="service-open" type="button"
+                                data-title="Carpentry & Framing"
+                                data-text="Framing, repairs, structural carpentry, custom builds and clean finishing work.">
+                                ↗
+                            </button>
+                        </div>
+
+                        <h3 class="service-title">Carpentry &amp; Framing</h3>
+
+                        <div class="service-img">
+                            <img src="images/Addition.png" alt="">
+                        </div>
+                    </article>
+
+                    <!-- Service Card 2: Patios & Porches -->
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-icon">
+                                <img src="images/Patio-icon.png" alt="Patio and Porches icons">
+                            </div>
+
+                            <!-- "Open" button (data-* used by JS for popup/modal) -->
+                            <button class="service-open" type="button"
+                                data-title="Patios & Porches"
+                                data-text="Porch builds, decking upgrades, railings, steps and outdoor living improvements.">
+                                ↗
+                            </button>
+                        </div>
+
+                        <h3 class="service-title">Patios &amp; Porches</h3>
+
+                        <div class="service-img">
+                            <img src="images/Patio.png" alt="">
+                        </div>
+                    </article>
+
+                    <!-- Service Card 3: Exterior Renovations -->
+                    <article class="service-card">
+                        <div class="service-top">
+                            <div class="service-icon">
+                                <img src="images/Exterior-icon.png" alt="Patio and Porches icons"">
+                            </div>
+
+                            <!-- "Open" button (data-* used by JS for popup/modal) -->
+                            <button class="service-open" type="button"
+                                data-title="Exterior Renovations"
+                                data-text="Siding, trim, exterior repairs, upgrades and renovations that refresh curb appeal.">
+                                ↗
+                            </button>
+                        </div>
+
+                        <h3 class="service-title">Exterior Renovations</h3>
+
+                        <div class="service-img">
+                            <img src="images/Exterior.png" alt="">
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery">
+            <div class="gallery-wrap">
+
+                <!-- Gallery heading / intro text -->
+                <div class="gallery-text">
+                    <h2>Gallery</h2>
+                    <p>See our completed projects</p>
+                </div>
+
+                <!-- Gallery image grid -->
+                <div class="gallery-images">
+
+                    <!-- Gallery item 1 -->
+                    <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
+                        <img src="images/Addition.png" alt="Newly constructed home addition with large windows and modern design" style="width: 500px; height: 300px; object-fit: cover;">
+                    </div>
+
+                    <!-- Gallery item 2 -->
+                    <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
+                        <img src="images/Deck.png" alt="Expertly constructed wooden deck with precision cuts areound mature trees, attached to a home" style="width: 500px; height: 300px; object-fit: cover;">
+                    </div>
+
+                    <!-- Gallery item 3 -->
+                    <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
+                        <img src="images/Carpentry.png" alt="Carpentry work in progress">
+                    </div>
+
+                    <!-- Gallery item 4 -->
+                    <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
+                        <img src="images/Patio.png" alt="Patio building in progress with wooden framework being constructed">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION (form + company contact info) -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us today</p>
+
+            <div class="contact-grid">
+                <!-- Contact form inputs -->
+                <div class="your-info">    
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+                    <button class="submit">Send Message</button>
+                </div>
+
+                <!-- Static contact information -->
+                <div class="contact-info">
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@vhomes.com</p>
+                    <p>Serving Houston, TX and surrounding areas</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    
+    <!-- FOOTER (copyright + legal links) -->
+    <footer class="site-footer">
+        <div class="container footer-row">
+            <div class="footer-left">© Copyright 2025 Vic – All Rights Reserved.</div>
+            <div class="footer-right">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+    
+</html>
