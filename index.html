@@ -82,9 +82,7 @@
                             </div>
 
                             <!-- "Open" button (data-* used by JS for popup/modal) -->
-                            <button class="service-open" type="button"
-                                data-title="Carpentry & Framing"
-                                data-text="Framing, repairs, structural carpentry, custom builds and clean finishing work.">
+                            <button class="service-open" type="button" data-service="carpentry">
                                 ↗
                             </button>
                         </div>
@@ -104,17 +102,16 @@
                             </div>
 
                             <!-- "Open" button (data-* used by JS for popup/modal) -->
-                            <button class="service-open" type="button"
-                                data-title="Patios & Porches"
-                                data-text="Porch builds, decking upgrades, railings, steps and outdoor living improvements.">
+                            <button class="service-open" type="button" data-service="patios">
                                 ↗
                             </button>
+
                         </div>
 
                         <h3 class="service-title">Patios &amp; Porches</h3>
 
                         <div class="service-img">
-                            <img src="images/Patio.png" alt="">
+                            <img src="images/Patio renovation.jpeg" alt="Renovation of a patio with wooden framework being constructed">
                         </div>
                     </article>
 
@@ -126,17 +123,16 @@
                             </div>
 
                             <!-- "Open" button (data-* used by JS for popup/modal) -->
-                            <button class="service-open" type="button"
-                                data-title="Exterior Renovations"
-                                data-text="Siding, trim, exterior repairs, upgrades and renovations that refresh curb appeal.">
+                            <button class="service-open" type="button" data-service="exterior">
                                 ↗
                             </button>
+
                         </div>
 
                         <h3 class="service-title">Exterior Renovations</h3>
 
                         <div class="service-img">
-                            <img src="images/Exterior.png" alt="">
+                            <img src="images/house exterior.jpeg" alt="">
                         </div>
                     </article>
 
@@ -174,7 +170,27 @@
 
                     <!-- Gallery item 4 -->
                     <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
-                        <img src="images/Patio.png" alt="Patio building in progress with wooden framework being constructed">
+                        <img src="images/Patio renovation.jpeg" alt="Patio building in progress with wooden framework being constructed">
+                    </div>
+
+                    <!-- Gallery item 5 -->
+                    <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
+                        <img src="images/Patio enclosure.jpeg" alt="Newly constructed home addition with large windows and modern design">
+                    </div>
+
+                    <!-- Gallery item 6 -->
+                    <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
+                        <img src="images/deck renovation.jpeg" alt="Expertly constructed wooden deck with precision cuts areound mature trees, attached to a home">
+                    </div>
+
+                    <!-- Gallery item 7 -->
+                    <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
+                        <img src="images/house exterior.jpeg" alt="Carpentry work in progress">
+                    </div>
+
+                    <!-- Gallery item 8 -->
+                    <div class="image-placeholder" style="width: 500px; height: 300px; background-color: black;">
+                        <img src="images/dock.jpeg" alt="Patio building in progress with wooden framework being constructed">
                     </div>
 
                 </div>
@@ -188,17 +204,18 @@
 
             <div class="contact-grid">
                 <!-- Contact form inputs -->
-                <div class="your-info">    
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <textarea placeholder="Message"></textarea>
+                <form class="your-info" id="contactForm">   
+                    <input type="text" placeholder="Name" name="name">
+                    <input type="email" placeholder="Email" name="email">
+                    <textarea placeholder="Message" name="message"></textarea>
                     <button class="submit">Send Message</button>
-                </div>
+                </form>
 
                 <!-- Static contact information -->
                 <div class="contact-info">
-                    <p>Phone: (123) 456-7890</p>
+                    <p>Phone: 346-2345127</p>
                     <p>Email: info@vhomes.com</p>
+                    <p>PO Box 430053, Houston TX 77234</p>
                     <p>Serving Houston, TX and surrounding areas</p>
                 </div>
             </div>
