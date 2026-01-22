@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="service-modal__panel" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
       <button class="service-modal__close" type="button" aria-label="Close" data-close="true">✕</button>
       <h3 id="serviceModalTitle" class="service-modal__title"></h3>
-      <p class="service-modal__text"></p>
+      <div class="service-modal__text"></div>
     </div>
   `;
 
@@ -19,29 +19,106 @@ document.addEventListener("DOMContentLoaded", () => {
   const titleEl = modal.querySelector(".service-modal__title");
   const textEl = modal.querySelector(".service-modal__text");
 
+  const serviceContent = {
+  carpentry: {
+    title: "Carpentry & Framing",
+    html: `
+      <p>
+        We provide precise, reliable carpentry and framing for both new construction and renovations.
+        This includes interior framing renovation reinforcing the structure for strength, safety,
+        and long-term stability.
+      </p>
+
+      <p>
+        Our work includes structural framing, repairs, and custom builds, ensuring reinforced framing
+        and durable construction built to last.
+      </p>
+
+      <ul>
+        <li>Interior and structural framing renovation</li>
+        <li>Reinforcing structure for strength and safety</li>
+        <li>Structural framing, repairs, and custom builds</li>
+        <li>Durable, long-term stability and clean detailing</li>
+      </ul>
+
+      <p>
+        We make sure the foundation of your project is done right the first time, with reliable,
+        long-lasting results.
+      </p>    `
+  },
+
+  patios: {
+    title: "Patios & Porches",
+    html: `
+      <p>
+        We design and build patios and porches that turn outdoor spaces into comfortable living areas,
+        including wooden patio and porch renovation with reinforced framing and new,
+        weather-resistant boards.
+      </p>
+
+      <ul>
+        <li>Wooden patio and porch renovation</li>
+        <li>Deck renovation with reinforced structure</li>
+        <li>New, weather-resistant boards</li>
+        <li>Patio enclosure and outdoor living improvements</li>
+      </ul>
+
+      <p>
+        Built for comfort, durability, and long-term performance in the Texas climate.
+      </p>
+    `
+  },
+
+  exterior: {
+    title: "Exterior Renovations",
+    html: `
+      <p>
+        We specialize in full house exterior renovation built for long-term performance and value,
+        improving both the appearance and protection of your home.
+      </p>
+
+      <ul>
+        <li>Full house exterior renovation</li>
+        <li>Exterior repairs and structural upgrades</li>
+        <li>Dock renovation delivering strength and safety and long term stability</li>
+        <li>Upgrades that improve durability and curb appeal</li>
+      </ul>
+
+      <p>
+        Built with quality materials, attention to detail, and a clean, modern finish designed to last.
+      </p>
+    `
+  }
+};
+
+
   let lastFocusedEl = null;
 
-  function openModal({ title, text }) {
-    lastFocusedEl = document.activeElement;
+function openModal({ title, html }) {
+  lastFocusedEl = document.activeElement;
 
-    titleEl.textContent = title || "Service";
-    textEl.textContent = text || "";
+  titleEl.textContent = title || "Service";
+  textEl.innerHTML = html || "";
 
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
 
-    // Prevent background scroll
-    document.body.style.overflow = "hidden";
+  // Prevent background scroll
+  document.documentElement.style.overflow = "hidden";
+
+  modal.querySelector(".service-modal__close").focus();
+}
 
     // Focus close button for accessibility
     const closeBtn = modal.querySelector(".service-modal__close");
     closeBtn.focus();
-  }
+  
 
   function closeModal() {
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+
 
     // Restore focus
     if (lastFocusedEl && typeof lastFocusedEl.focus === "function") {
@@ -50,14 +127,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2) Wire up all service buttons
-  document.querySelectorAll(".service-open").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      openModal({
-        title: btn.dataset.title,
-        text: btn.dataset.text,
-      });
+document.querySelectorAll(".service-open").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const key = btn.dataset.service;
+    const content = serviceContent[key];
+
+    openModal({
+      title: content?.title,
+      html: content?.html
     });
   });
+});
+
 
   // 3) Close when clicking backdrop or close button
   modal.addEventListener("click", (e) => {
@@ -176,4 +257,27 @@ document.querySelectorAll(".navigation a").forEach(link => {
     document.querySelectorAll(".navigation a").forEach(l => l.classList.remove("is-active"));
     link.classList.add("is-active");
   });
+});
+
+// Contact form submission handling
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  const response = await fetch("https://formspree.io/f/mvzzaogl", {
+    method: "POST",
+    body: data,
+    headers: {
+      Accept: "application/json"
+    }
+  });
+
+  if (response.ok) {
+    alert("Message sent successfully!");
+    form.reset();
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
 });
